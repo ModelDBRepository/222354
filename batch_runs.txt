@@ -1,0 +1,22 @@
+Documentation for proposed batch runs of build_net_Shep.hoc
+
+The basic idea is to run the network model crircuit and store both the
+simulation results and the code that created the stimulation in folder
+names like:
+
+run_XXXX
+where XXXX is the run number
+Timestamps are written at the start and stop of each simulation:
+20150611_1228_start
+20150611_1330_stop
+YYYYMMDD_HHMM_
+
+The tanks will be stored in
+tdt2mat_data
+as usual.  Spikes for the net will be stored in
+tdt2mat_data/more_data
+
+polar plots and raster plots need to be automatically generated.
+
+---
+I think I want to control the batch runs with a program called batch_runs.py

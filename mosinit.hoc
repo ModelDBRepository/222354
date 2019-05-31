@@ -1,0 +1,3 @@
+load_file("nrngui.hoc")
+load_file("build_net_Shep.hoc")
+// load_file("init.hoc")

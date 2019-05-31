@@ -1,0 +1,30 @@
+Test cases for determining maximum firing rate:
+
+light_period = 200
+light_gauss_center = 113.33
+light_half_width = 30
+light_peak_rate = 40
+
+tstop =600
+
+breathing_period = 400
+breath_gauss_center = 0
+breath_half_width = 100
+
+(noinhib_net)
+breath_peak_rate  m1 max fr
+200		22.37
+400		28.06
+450		29.14
+475		33.33
+482.5		32.30
+488.75		30.29
+500		36.65
+512.5		33.63
+525		35.86
+550		32.71
+600		30.70
+
+From these test runs we can say that the instantaneous max firing rate was 37 Hz.
+
+

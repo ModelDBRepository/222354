@@ -1,0 +1,32 @@
+vgraph.label(0.475,0.95,net_type)
+
+objref y_vec
+y_vec = new Vector()
+proc event_grapher() {
+// $o1 vector events to graph
+// $o2 graph 
+// $3 y coordinate to graph on
+// $s4 marker designator
+// $5 marker size
+// $6 marker color
+// $7 marker brush
+
+  for index=0, $o1.size()-1 {
+    vgraph.mark($o1.x[index],$3, $s4, $5, $6, $7)
+  }
+}
+
+event_grapher(breath_events_for_mc1,vgraph,-120, "|",8, 1, 2)
+event_grapher(breath_events_for_mc2,vgraph,-110, "|",8, 2, 2)
+event_grapher(light_events_for_mc1,vgraph,-100, "|",8, 1, 2)
+
+//virt_breath_pulse.add(-120) // move to bottom of graph
+//virt_light_pulse.add(-110)   // move to bottom of graph
+  // display
+//virt_breath_pulse.line(vgraph,t_vec)
+//virt_light_pulse.line(vgraph,t_vec)
+stim_onset=12*(light_gauss_center-light_half_width-delta_theta_center)/light_period // returns 1.5 and 7.5 hopefully for (1.5/12)(2pi) and (7.5/12)(2pi) stim phase relative to breath
+sprint(filename, "%s_vtraces_b%d_s%d_stim_onset%2.1f_xgc%d_%d.eps", net_type, breath_peak_rate, light1_peak_rate, stim_onset,gc_on,run_num)
+vgraph.exec_menu("View = plot")
+vgraph.printfile(filename)
+//quit()

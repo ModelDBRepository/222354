@@ -1,0 +1,31 @@
+// The variables virt_breath_pulse and virt_stim_pulse are indicators for the timing of the breath and stimulus
+// by being one when the time is within the half width of the peak of either quantitiy
+tstop =3* breathing_period
+
+objref virt_breath_pulse
+virt_breath_pulse = new Vector()
+objref virt_light_pulse
+virt_light_pulse = new Vector()
+t_ = 0
+breath_value=0
+stim_value=0
+virt_breath_pulse_height=5
+virt_light_pulse_height=5
+for (t_=0; t_<=tstop; t_ = t_ + dt) {
+  time_within_breath = t_%breathing_period
+  if (((time_within_breath>=breath_gauss_center-breath_half_width)&&(time_within_breath<breath_gauss_center+breath_half_width)) || \
+((time_within_breath>=breath_gauss_center+breathing_period-breath_half_width)&&(time_within_breath<breath_gauss_center+breathing_period+breath_half_width))) {
+  breath_value=virt_breath_pulse_height
+  } else {
+  breath_value = 0
+  }
+ if (((time_within_breath>=light_gauss_center-light_half_width) &&(time_within_breath<light_gauss_center+light_half_width)) || \
+((time_within_breath>=light_gauss_center+light_period-light_half_width) &&(time_within_breath<light_gauss_center+light_period+light_half_width)))  {
+  light_value=virt_light_pulse_height
+  } else {
+  light_value = 0
+  }
+  virt_breath_pulse.append(breath_value)
+  virt_light_pulse.append(light_value)
+}
+

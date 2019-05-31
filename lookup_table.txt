@@ -1,0 +1,18 @@
+net: noinhib_net, run_0, B=200, S=40, cols=1
+net: noinhib_net, run_1, B=200, S=100, cols=1
+net: noinhib_net, run_2, B=200, S=160, cols=1
+net: pg_net, run_3, B=200, S=40, cols=1
+net: pg_net, run_4, B=200, S=100, cols=1
+net: pg_net, run_5, B=200, S=160, cols=1
+net: gc_net, run_6, B=200, S=40, cols=1
+             run_6/parameters.hoc:gc_on=4 // 4
+net: gc_net, run_7, B=200, S=100, cols=1
+             run_7/parameters.hoc:gc_on=4 // 4
+net: gc_net, run_8, B=200, S=160, cols=1
+             run_8/parameters.hoc:gc_on=4 // 4
+net: gc_net, run_9, B=200, S=40, cols=1
+             run_9/parameters.hoc:gc_on=30 // 4
+net: gc_net, run_10, B=200, S=100, cols=1
+             run_10/parameters.hoc:gc_on=30 // 4
+net: gc_net, run_11, B=200, S=160, cols=1
+             run_11/parameters.hoc:gc_on=30 // 4

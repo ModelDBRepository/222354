@@ -1,0 +1,13 @@
+objref m1_periods
+
+proc print_m1_max_fr() {
+
+  m1_periods=m1_events.c.deriv()
+  m1_periods.div(1000)
+  objref m1_freq
+  m1_freq=new Vector()
+  for index=0, m1_periods.size()-1 {
+	m1_freq.append(1/m1_periods.x[index])
+	}
+ print m1_freq.max()
+}

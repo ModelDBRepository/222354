@@ -1,0 +1,9 @@
+1) create the parameters.hoc and num_of_columns files in run_X folders
+by running
+./pre_init.py
+2) Repeat these steps for two onsets (1.5) and (7.5/12)(2pi):
+adjust the onset in build_net_Shep_NSG_gui.hoc and then 
+a)python extra_gui_driver.py
+b) Finally start with
+nrngui build_net_Shep_NSG_gui_0.hoc post_process.hoc
+The _0 calls the _1 which calls the _2 and so forth.

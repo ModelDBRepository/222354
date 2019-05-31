@@ -1,0 +1,9 @@
+vgraph.label(0.475,0.95,net_type)
+virt_breath_pulse.add(-120) // move to bottom of graph
+virt_light_pulse.add(-110)   // move to bottom of graph
+  // display
+virt_breath_pulse.line(vgraph,t_vec)
+virt_light_pulse.line(vgraph,t_vec)
+sprint(filename, "%s_vtraces.eps", net_type)
+vgraph.exec_menu("View = plot")
+vgraph.printfile(filename)
